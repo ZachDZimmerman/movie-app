@@ -12,13 +12,13 @@ function config($stateProvider, $urlRouterProvider) {
     url: '/',
     controller: 'HomeController',
     templateUrl: 'app/views/home.html'
-  }).state('home.recipes', {
-    url: 'recipes/:ingredients?page',
+  }).state('results', {
+    url: 'results/:ingredients?page',
     controller: 'RecipesController',
-    templateUrl: 'app/views/recipes.html'
-  }).state('favorites', {
-    url: '/favorites',
-    controller: 'FavoritesController',
-    templateUrl: 'app/views/favorites.html'
+    templateUrl: 'app/views/results.html'
+  }).state('details', {
+    url: '/details',
+    controller: 'DetailsController',
+    templateUrl: 'app/views/details.html'
   });
 }

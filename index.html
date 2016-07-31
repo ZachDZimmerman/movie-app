@@ -11,16 +11,25 @@
   <body>
   <div class="container">
     <div class="page-header">
-      <h1 class="center">Welcome to OMDB Movie Search</h1>
-
+      <h1 class="text-center">Welcome to OMDB Movie Search</h1>
     </div>
   </div>
-
+  <div class="container">
+    <form class="form-group">
+      <div class="col-md-4 col-md-offset-4">
+          <label for="search">Enter a movie title</label>
+          <input type="text" class="form-control" id="search" ng-model="movie.search" placeholder="Search"><br>
+          <button class="btn-group-justified btn btn-info" type="submit" ng-submit=""><i class="fa fa-search" aria-hidden='true'></i> Search</button>
+      </div>
+    </form>
+  </div>
+  <div ui-view></div>
 
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js" charset="utf-8"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" charset="utf-8"></script>
     <script src="app/app.js" charset="utf-8"></script>
+    <script src="app/controllers/Home.controller.js" charset="utf-8"></script>
     <script src="app/controllers/Search.controller.js" charset="utf-8"></script>
     <script src="app/controllers/Show.controller.js" charset="utf-8"></script>
 

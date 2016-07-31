@@ -1,3 +1,3 @@
-## Movie Search App
+# Movie Search App
 
-# Made with Angular
+## Made with Angular
