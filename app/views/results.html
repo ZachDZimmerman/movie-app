@@ -1,0 +1,12 @@
+<section class="movieResults">
+  <h2>Movie Results</h2>
+    <article class="results-list row">
+      <figure ng-repeat="movie in movie.savedMovies" class="col-md-4">
+        <a ui-sref="#"></a>
+          <div class="inner panel panel-primary">
+            <h4>{{movie.Title}}</h4>
+            <p>Year Released: {{movie.Year}}</p>
+          </div>
+      </figure>
+    </article>
+</section>

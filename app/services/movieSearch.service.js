@@ -12,7 +12,8 @@ angular
         getMovie: function (movieTitle) {
           return $http.get(URL + movieTitle)
           .then(result => {
-            return result.data.results;
+            console.log(result.data);
+            return result.data;
           })
         },
         pullSavedMovies: function () {

@@ -7,7 +7,7 @@ function config($stateProvider, $urlRouterProvider) {
 
     $stateProvider
         .state("search", {
-            url: "results/:id",
+            url: "search/:id",
             controller: "SearchController",
             templateUrl: "app/views/results.html"
         })
