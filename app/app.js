@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 angular
     .module("movieSearch", ["ui.router"])
     .config(config)
@@ -8,12 +10,12 @@ function config($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state("search", {
             url: "search/:id",
-            controller: "SearchController",
-            templateUrl: "app/views/results.html"
+            templateUrl: "app/views/results.html",
+            controller: "SearchController"
         })
         .state("details", {
-            url: "/details",
-            controller: "DetailsController",
-            templateUrl: "app/views/details.html"
+            url: "/details/:id",
+            templateUrl: "app/views/details.html",
+            controller: "DetailsController"
         });
 }

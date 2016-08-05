@@ -1,21 +1,18 @@
-/*eslint-disable*/
-
 angular
-  .module("movieSearch")
-  .controller("SearchController", SearchController);
+    .module("movieSearch")
+    .controller("SearchController", SearchController);
 
-  function SearchController($scope, $stateParams, MovieService) {
-    var movieTitle = $stateParams.movieTitle;
+function SearchController($scope, $stateParams, $http, DataStored) {
+    $scope.home = {};
+    $scope.home.params = $stateParams;
+    $scope.home.movieResults = [];
 
-    MovieService
-      .getMovie(movieTitle)
-      .then(movieTitle => {
-        $scope.movieTitle = movieTitle;
-      })
-
-    $scope.getMovie = function () {
-      $state.go('search', {
-        movieTitle: $state.movieTitle
-      });
-    }
-  }
+    $scope.home.searchingMovie = function(params) {
+        $http.get("http://www.omdbapi.com/?s=" + params.id).then(data => {
+            for (let i = 0; i < data.data.Search.length; i++) {
+                $scope.home.movieResults.push(data.data.Search[i]);
+            }
+        });
+    };
+    $scope.home.searchingMovie($scope.home.params);
+}
