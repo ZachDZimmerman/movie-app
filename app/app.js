@@ -1,7 +1,7 @@
 /*eslint-disable*/
 var app = angular.module("movieSearch", ["ui.router"]);
 
-  app.config(function($stateProvider, $urlRouterProvider) {
+  app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise("/");
 
     $stateProvider
@@ -14,5 +14,6 @@ var app = angular.module("movieSearch", ["ui.router"]);
             url: "/details/:movieId",
             controller: "DetailController",
             templateUrl: "/app/views/details.html"
-        });
+        })
+        $locationProvider.html5Mode(true);
   });
