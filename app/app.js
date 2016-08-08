@@ -1,21 +1,18 @@
 /*eslint-disable*/
+var app = angular.module("movieSearch", ["ui.router"]);
 
-angular
-    .module("movieSearch", ["ui.router"])
-    .config(config)
-
-function config($stateProvider, $urlRouterProvider) {
+  app.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/");
 
     $stateProvider
         .state("search", {
-            url: "search/:id",
-            templateUrl: "app/views/results.html",
+            url: "/search/:id",
+            templateUrl: "/app/views/results.html",
             controller: "SearchController"
         })
-        .state("details", {
-            url: "/details/:id",
-            templateUrl: "app/views/details.html",
-            controller: "DetailsController"
+        .state("detail", {
+            url: "/details/:movieId",
+            controller: "DetailController",
+            templateUrl: "/app/views/details.html"
         });
-}
+  });

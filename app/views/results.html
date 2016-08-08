@@ -1,12 +1,14 @@
-<section class="movieResults">
+<section class="movieResults container-fluid">
   <h2>Movie Results</h2>
     <article class="results-list row">
-      <figure ng-repeat="movie in movie.savedMovies" class="col-md-4">
-        <a ui-sref="#"></a>
-          <div class="inner panel panel-primary">
+      <figure ng-repeat="movie in home.movieResults" class="col-md-8 col-md-offset-2 text-center">
+        <a ui-sref='detail({ movieId: movie.imdbID})'>
+          <div class="row inner panel panel-info">
+            <img class="col-md-6" ng-src="{{ movie.Poster }}" alt="" />
             <h4>{{movie.Title}}</h4>
-            <p>Year Released: {{movie.Year}}</p>
+            <p>Year Released: {{ movie.Year }}</p>
           </div>
+        </a>
       </figure>
     </article>
 </section>

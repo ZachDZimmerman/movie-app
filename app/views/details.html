@@ -1,0 +1,22 @@
+<main class="container text-center">
+    <h2> {{ detail.Title }} {{ detail.Year }}</h2>
+    <br>
+    <section class="row">
+      <img class="col-md-3" ng-src="{{ detail.Poster }}" alt="" />
+      <figure class="panel panel-primary col-md-9">
+        <p>Actors: {{ detail.Actors }}</p>
+        <p>Awards: {{ detail.Awards }}</p>
+        <p>Country: {{ detail.Country }}</p>
+        <p>Director: {{ detail.Director }}</p>
+        <p>Genre: {{ detail.Genre }}</p>
+        <p>Plot: {{ detail.Plot }}</p>
+        <p>Rated: {{ detail.Rated }}</p>
+        <p>Released: {{ detail.Released }}</p>
+        <p>Runtime: {{ detail.Runtime }}</p>
+        <p>Year: {{ detail.Year }}</p>
+        <p>IMDB Rating: {{ detail.imdbRating }}</p>
+
+
+      </figure>
+    </section>
+</main>
